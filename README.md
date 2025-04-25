@@ -1,9 +1,10 @@
 # my_js_toolbox
-## This is my library of useful tools. It helps me to improve my JS skills
-## Now my library has the next structure
-Arrays  #work with arrays
-  arrays-utils.js #simple functions for working with arrays
-Objects #work with objects
-  objects-utils.js #simple functions for working with objects
+## This is my library of useful JavaScript helpers. It helps me to improve my JS skills
+## Current structure
+src/
+|-- arrays  #work with arrays
+  --arrays-utils.js #simple array functions
+|-- Objects #work with objects
+  --objects-utils.js #basic object utilities
 
-## Be catious! This library is only for beginners!
+**Note** Be catious! This library is only for beginners and may contain non-optimal solutions!
