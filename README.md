@@ -7,4 +7,4 @@ src/
 |-- Objects #work with objects
   --objects-utils.js #basic object utilities
 
-**Note** Be catious! This library is only for beginners and may contain non-optimal solutions!
+ Be catious! This library is only for beginners and may contain non-optimal solutions!
