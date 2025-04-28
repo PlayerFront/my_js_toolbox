@@ -37,5 +37,5 @@ function getRandomElement (arr) {
  */
 
 function getRandomElementShort (arr) {
-    return arr[Math.floor(Math.rendom() * arr.length)];
+    return arr[Math.floor(Math.random() * arr.length)];
 }
