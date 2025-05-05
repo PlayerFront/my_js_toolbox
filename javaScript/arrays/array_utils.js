@@ -55,3 +55,31 @@ function getArrayOfRandomElements(arr) {
     return Array.from({ length }, () => arr[Math.floor(Math.random() * arr.length)])
 
 }
+
+
+/**
+ * возвращает массив случайных чисел из заданного промежутка, с заданной длиной
+ * @param {number} min - минимальное значение в диапазоне
+ * @param {number} max - максимальное значение в диапазоне
+ * @param {number} length - желаемая длина массива
+ * @returns {number[]} - массив уникальных чисел без повторения подряд
+ * @throws {Error} Если диапазон слишком мал для генерации неповторяющихся чисел
+ */
+function createArray(min, max, length) {
+    if (length > 1 && max - min + 1 < 2) {
+        throw new Error('Диапазон слишком узкий для генерации неповторяющихся чисел');
+    }
+
+    const array = [];
+    let lastNumber = null;
+
+    while (array.length < length) {
+        const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+
+        if(randomNumber !== lastNumber) {
+            array.push(randomNumber);
+            lastNumber = randomNumber;
+        }
+    }
+    return array;
+}
