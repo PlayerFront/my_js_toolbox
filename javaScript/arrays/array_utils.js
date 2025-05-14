@@ -76,10 +76,46 @@ function createArray(min, max, length) {
     while (array.length < length) {
         const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
 
-        if(randomNumber !== lastNumber) {
+        if (randomNumber !== lastNumber) {
             array.push(randomNumber);
             lastNumber = randomNumber;
         }
     }
     return array;
+}
+
+/**
+ * Функции для перемешивания массивов
+ * Пермешивает массив с помощью алгоритма Фишера-Йетса
+ * Гарантирует равномерное распределение элементов
+ * @param {Array} array - исходный массив
+ * @returns {Array} - перемешанный массив (новая копия, исходный не изменяется)
+ * @example
+ * const shuffled = fisherYatesShuffle([1, 2, 3, 4]);
+ * console.log(shuffled);
+ */
+
+function fisherYatesShuffle(array) {
+    const shuffled = [...array];
+
+    for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+}
+
+/**
+ * Перемешивает массив с помощью метода sort и рандомизатора
+ * Недостаток: не обеспечивает равномерного перемешивания элементов
+ * Неекоторые перестановки могут встречаться чаще других
+ * @param {Array} array - исходный массив
+ * @returns {Array} - перемешанный массив (новая копия)
+ * @example
+ * const shuffled = sortRandomShuffle([1, 2, 3, 4]);
+ * console.log(shuffled);
+ */
+
+function sortRandomShuffle (array) {
+    return [...array].sort(() => Math.random() - 0.5);
 }
