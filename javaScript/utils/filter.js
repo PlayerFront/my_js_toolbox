@@ -28,5 +28,13 @@ function cleanString (str, options = {}) {
     // 4. С кастомными символами (например "-" и "'"): /[^a-zа-яё0-9\ы\-']/gi
 
     if (keepNumbers) regexPattern += '0-9';
-    if (keepSpaces) regexPattern += '\\s'
+    if (keepSpaces) regexPattern += '\\s';
+    
+    regexPattern += ']';
+
+    return str
+        .replace(new RegExp(regexPattern, 'gi'), ' ')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .toLowerCase();
 }
