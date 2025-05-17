@@ -1,4 +1,5 @@
 /**
+ * Numbers
  * Проверяет, является ли значение числом (и не NaN)
  * @returns {boolean} - возвращает правда/ложь в зависимости от переданного значения
  */
@@ -11,10 +12,8 @@ if (typeof value !== 'number' || isNaN(value)) return false;
 if (!Number.isInteger(value)) return false;
 
 
-
-
-
 /**
+ * Strings
  * Проверяет, является ли значение строкой (не пустой, если нужно)
  * @returns {boolean} - возвращает правда/ложь в зависимости от переданного значения
  */
@@ -25,3 +24,17 @@ if (typeof value !== 'string' || value.trim() === '') return false;
  * @returns {boolean} - возвращает правда/ложь в зависимости от переданного значения
  */
 if (!/^['"].*['"]$/ .test(value)) return false;
+
+
+/**
+ * Arrays and objects
+ * Проверяет, является ли значение массивом (не пустым, если нужно)
+ * @returns {boolean} - возвращает правда/ложь в зависимости от переданного значения
+ */
+if(!Array.isArray(value) || !value.length) return false
+
+/**
+ * Проверяет, является ли значение объектом (не null, не массивом, не пустым)
+ * @returns {boolean} - возвращает правда/ложь в зависимости от переданного значения
+ */
+if (typeof value !== 'object' ||value === null || !Object.keys(value).length) return false;
