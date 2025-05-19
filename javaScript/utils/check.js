@@ -38,3 +38,11 @@ if(!Array.isArray(value) || !value.length) return false
  * @returns {boolean} - возвращает правда/ложь в зависимости от переданного значения
  */
 if (typeof value !== 'object' ||value === null || !Object.keys(value).length) return false;
+
+
+/**
+ * Пустые значения
+ * Проверяет, является ли значение пустым (null, undefined, "", [], {})
+ * @returns {boolean} - возвращает правда/ложь в зависимости от того, является ли значение пустым
+ */
+if (!value || (typeof value === 'object' && Object.keys(value).length === 0)) return false;
