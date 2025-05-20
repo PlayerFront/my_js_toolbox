@@ -26,6 +26,7 @@ function cleanString (str, options = {}) {
     // 2. С пробелами: /[^a-zа-яё\s]/gi
     // 3. С цифрами: /[^a-zа-яё0-9]/gi
     // 4. С кастомными символами (например "-" и "'"): /[^a-zа-яё0-9\ы\-']/gi
+    // 5. Убираем только восклицательные знаки /!/gi
 
     if (keepNumbers) regexPattern += '0-9';
     if (keepSpaces) regexPattern += '\\s';
