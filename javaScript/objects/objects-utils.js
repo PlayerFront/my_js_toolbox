@@ -33,3 +33,17 @@ function sumNested(obj) {
 function mergeObjects(obj1, obj2) {
     return { ...obj1, ...obj2 };
 }
+
+/**
+ * Глубокая копия объектов (без сохранения ссылок на вложенные объекты)
+ * @param {Object} obj - объект для копирования
+ * @returns {Object} - новый объект, являющийся глубокой копией исходного
+ * @example
+ * const original = {a: 1, b: { c: 2}};
+ * const copy = deepClone(original);
+ * copy.b.c = 3;
+ * // в original.b.c останется 2
+ */
+function deepClone(obj) {
+    return JSON.parse(JSON.stringify(obj));
+}
