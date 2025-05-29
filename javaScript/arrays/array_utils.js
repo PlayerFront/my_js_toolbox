@@ -58,6 +58,23 @@ function getArrayOfRandomElements(arr) {
 
 
 /**
+ * возвращает массив от min до max (включительно)
+ * @param {number} min - начальное число (включительно)
+ * @param {number} max - конечное число (включительно)
+ * @returns {number[]} - массив чисел от min до max
+ * @throws {Error} если min или max не числа или min > max
+ */
+function createNumberArray(min, max) {
+    if (typeof min !== 'number' || typeof max !== 'number' || isNaN(min) || isNaN(max)) {
+        throw new Error('Оба аргумента должны быть числами!');
+    }
+    if (min > max) {
+        throw new Error('min не может быть больше max!');
+    }
+    return Array.from({ length: max - min + 1 }, (_, i) => min + i);
+}
+
+/**
  * возвращает массив случайных чисел из заданного промежутка, с заданной длиной
  * @param {number} min - минимальное значение в диапазоне
  * @param {number} max - максимальное значение в диапазоне
@@ -116,6 +133,6 @@ function fisherYatesShuffle(array) {
  * console.log(shuffled);
  */
 
-function sortRandomShuffle (array) {
+function sortRandomShuffle(array) {
     return [...array].sort(() => Math.random() - 0.5);
 }
